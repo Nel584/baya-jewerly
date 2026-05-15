@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layali Perles | Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="logo">Layali <span>Perles</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="taille.html">Tailles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="accueil.html" class="mobile-link">Accueil</a>
+        <a href="histoire.html" class="mobile-link">Notre Histoire</a>
+        <a href="collection.html" class="mobile-link">Collection</a>
+        <a href="taille.html" class="mobile-link">Guide des Tailles</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- PRODUITS -->
+    <section class="products">
+        <div class="section-header reveal">
+            <span class="section-label">✦ Nos Créations</span>
+            <h2>La <em>Collection</em></h2>
+            <p>Chaque pièce, une déclaration de féminité</p>
+        </div>
+
+        <div class="filters stagger-children">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="seduction">Séduction</button>
+            <button class="filter-btn" data-filter="cristal">Cristal</button>
+            <button class="filter-btn" data-filter="luxe">Luxe</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <div class="product-grid" id="productGrid"
+            <div class="product-card" data-category="seduction">
+                <div class="badge">Top Vente</div>
+                <div class="img-container">
+                    <img src="images/baya1.JPG" alt="Baya Rouge Rubis">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Séduction</p>
+                    <h3>Baya Rouge Rubis</h3>
+                    <div class="price-row">
+                        <span class="price">2 500 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Rouge Rubis')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cristal">
+                <div class="img-container">
+                    <img src="images/baya2.JPG" alt="Baya Cristal Pur">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Cristal</p>
+                    <h3>Baya Cristal Pur</h3>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Cristal Pur')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="luxe">
+                <div class="img-container">
+                    <img src="images/baya3.JPG" alt="Baya Royal Gold">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Luxe</p>
+                    <h3>Baya Royal Gold</h3>
+                    <div class="price-row">
+                        <span class="price">5 000 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Royal Gold')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImg" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

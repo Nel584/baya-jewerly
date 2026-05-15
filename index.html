@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layali Perles | L'Art de la Séduction Africaine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+    :root {
+        --ebony:      #0D0A08;
+        --gold:       #C8973A;
+        --gold-light: #E2B96A;
+        --cream:      #F5EDD6;
+        --terracotta: #A0522D;
+        --rose:       #D4997A;
+        --white:      #FFFDF9;
+        --gray:       #7a7166;
+        --font-display: 'Cormorant Garamond', Georgia, serif;
+        --font-body:    'Jost', sans-serif;
+        --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--ebony); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    /* HEADER */
+    header {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 22px 6%; transition: var(--transition);
+    }
+    header.scrolled {
+        background: rgba(13, 10, 8, 0.94); backdrop-filter: blur(14px);
+        padding: 14px 6%; box-shadow: 0 1px 0 rgba(200, 151, 58, 0.2);
+    }
+    .logo {
+        font-family: var(--font-display); font-size: 28px; font-weight: 600;
+        color: var(--white); letter-spacing: 1px; z-index: 1001;
+    }
+    .logo span { color: var(--gold); font-style: italic; }
+    nav { display: flex; align-items: center; gap: 40px; }
+    .nav-links { display: flex; gap: 35px; }
+    .nav-links a {
+        color: rgba(255,255,255,0.75); font-size: 12px; letter-spacing: 2px;
+        text-transform: uppercase; font-weight: 400; position: relative; transition: color 0.3s;
+    }
+    .nav-links a::after {
+        content: ''; position: absolute; bottom: -4px; left: 0;
+        width: 0; height: 1px; background: var(--gold); transition: width 0.35s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .burger {
+        display: none; flex-direction: column; gap: 5px;
+        cursor: pointer; z-index: 1001; padding: 5px;
+    }
+    .burger span {
+        display: block; width: 24px; height: 1.5px;
+        background: var(--white); transition: var(--transition); transform-origin: center;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-nav {
+        position: fixed; inset: 0; background: var(--ebony); z-index: 999;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+    }
+    .mobile-nav.open { opacity: 1; pointer-events: all; }
+    .mobile-nav a {
+        font-family: var(--font-display); font-size: 38px; font-style: italic;
+        color: var(--cream); transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+        height: 100vh; position: relative;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .hero-bg {
+        position: absolute; inset: 0;
+        background:
+            linear-gradient(165deg, rgba(13,10,8,0.7) 0%, rgba(160,82,45,0.35) 50%, rgba(13,10,8,0.85) 100%);
+        transform: translateZ(0);
+        will-change: transform;
+    }
+    .hero-slide {
+        position: absolute; inset: 0;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .hero-slide.active {
+        opacity: 1;
+    }
+    .hero-slide img {
+        width: 100%; height: 100%; object-fit: cover;
+        transform: scale(1.1);
+    }
+    .hero-circle {
+        position: absolute; width: 520px; height: 520px; border-radius: 50%;
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        top: 50%; left: 50%; transform: translate(-50%, -50%);
+        animation: pulse-ring 4s ease-in-out infinite;
+    }
+    .hero-circle::before {
+        content: ''; position: absolute; inset: 30px;
+        border-radius: 50%; border: 1px solid rgba(200, 151, 58, 0.15);
+    }
+    @keyframes pulse-ring {
+        0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+        50%       { transform: translate(-50%,-50%) scale(1.04); opacity: 1; }
+    }
+    .hero-content {
+        position: relative; z-index: 2; text-align: center;
+        color: var(--white); max-width: 760px; padding: 0 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.15);
+    }
+    .hero-content::before {
+        content: ''; position: absolute; inset: -20px;
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, transparent 70%);
+        z-index: -1; pointer-events: none;
+    }
+    .hero-tag {
+        display: inline-block; font-size: 11px; letter-spacing: 4px;
+        text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+        opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero h1 {
+        font-family: var(--font-display); font-size: clamp(46px, 7vw, 80px);
+        font-weight: 300; line-height: 1.1; margin-bottom: 24px;
+        opacity: 0; animation: fadeUp 0.8s 0.55s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+        font-size: 15px; color: rgba(255,255,255,0.7); letter-spacing: 1px;
+        margin-bottom: 48px; opacity: 0; animation: fadeUp 0.8s 0.75s forwards;
+    }
+    .hero-btns {
+        display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+        opacity: 0; animation: fadeUp 0.8s 0.95s forwards;
+    }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    .scroll-hint {
+        position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+        display: flex; flex-direction: column; align-items: center; gap: 8px;
+        color: rgba(255,255,255,0.4); font-size: 10px; letter-spacing: 3px;
+        text-transform: uppercase; z-index: 2; animation: fadeUp 1s 1.4s both;
+    }
+    .scroll-line {
+        width: 1px; height: 50px;
+        background: linear-gradient(to bottom, var(--gold), transparent);
+        animation: scroll-drop 2s ease-in-out infinite;
+    }
+    @keyframes scroll-drop {
+        0%   { transform: scaleY(0); transform-origin: top; }
+        50%  { transform: scaleY(1); transform-origin: top; }
+        51%  { transform: scaleY(1); transform-origin: bottom; }
+        100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+        display: inline-block; padding: 16px 38px; background: var(--gold);
+        color: var(--ebony); font-family: var(--font-body); font-size: 12px;
+        font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+        border-radius: 2px; transition: var(--transition); border: 1px solid var(--gold);
+        cursor: pointer;
+    }
+    .btn-primary:hover { background: transparent; color: var(--gold); }
+    .btn-outline {
+        display: inline-block; padding: 16px 38px; background: transparent;
+        color: var(--white); font-family: var(--font-body); font-size: 12px;
+        font-weight: 400; letter-spacing: 2px; text-transform: uppercase;
+        border-radius: 2px; border: 1px solid rgba(255,255,255,0.4); transition: var(--transition);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+    /* MARQUEE */
+    .marquee-strip { background: var(--gold); padding: 14px 0; overflow: hidden; display: flex; }
+    .marquee-track {
+        display: flex; gap: 60px; animation: marquee 20s linear infinite; white-space: nowrap;
+    }
+    .marquee-track span {
+        font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+        color: var(--ebony); font-weight: 500;
+    }
+    .marquee-track span.dot { color: rgba(13,10,8,0.4); letter-spacing: 0; }
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    /* ABOUT */
+    .about {
+        padding: 120px 6%; display: grid;
+        grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-img-frame {
+        position: relative; overflow: hidden; border-radius: 2px;
+    }
+    .about-img-frame img {
+        width: 100%; height: 560px; object-fit: cover; transition: transform 0.8s ease;
+    }
+    .about-img-frame:hover img { transform: scale(1.04); }
+    .about-img-frame::before {
+        content: ''; position: absolute; top: -16px; left: -16px;
+        width: 80px; height: 80px;
+        border-top: 1px solid var(--gold); border-left: 1px solid var(--gold);
+        z-index: 2; pointer-events: none;
+    }
+    .about-img-frame::after {
+        content: ''; position: absolute; bottom: -16px; right: -16px;
+        width: 80px; height: 80px;
+        border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold);
+        z-index: 2; pointer-events: none;
+    }
+    .about-badge {
+        position: absolute; bottom: 30px; left: -30px;
+        background: var(--ebony); color: var(--white); padding: 22px 28px; z-index: 3;
+    }
+    .about-badge strong {
+        display: block; font-family: var(--font-display); font-size: 36px;
+        color: var(--gold); line-height: 1;
+    }
+    .about-badge span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; }
+    .about-visual { position: relative; }
+    .about-text { padding-right: 20px; }
+    .section-label {
+        display: inline-block; font-size: 10px; letter-spacing: 4px;
+        text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+    }
+    .about-text h2 {
+        font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px);
+        font-weight: 300; line-height: 1.15; margin-bottom: 28px;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .about-text h2 em { font-style: italic; color: var(--terracotta); }
+    .about-text p { color: var(--gray); line-height: 1.9; font-size: 15px; margin-bottom: 18px; }
+    .about-divider { width: 48px; height: 1px; background: var(--gold); margin: 30px 0; }
+
+    /* PRODUCTS */
+    .products { padding: 100px 6%; background: var(--cream); position: relative; }
+    .products::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0;
+        height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 {
+        font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px);
+        font-weight: 300; line-height: 1.1;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .section-header h2 em { font-style: italic; color: var(--terracotta); }
+    .section-header p { color: var(--gray); font-size: 14px; letter-spacing: 1px; margin-top: 14px; }
+
+    .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 50px; flex-wrap: wrap; }
+    .filter-btn {
+        padding: 10px 26px; background: transparent; border: 1px solid rgba(13,10,8,0.2);
+        font-family: var(--font-body); font-size: 11px; letter-spacing: 2px;
+        text-transform: uppercase; cursor: pointer; border-radius: 2px;
+        transition: var(--transition); color: var(--ebony);
+    }
+    .filter-btn:hover, .filter-btn.active {
+        background: var(--ebony); color: var(--white); border-color: var(--ebony);
+    }
+
+    .product-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px; max-width: 1200px; margin: 0 auto;
+    }
+    .product-card {
+        background: var(--white); position: relative; overflow: hidden;
+        border-radius: 2px; transition: var(--transition);
+        opacity: 0; transform: translateY(30px); max-width: 420px; margin: 0 auto;
+    }
+    .product-card.visible { opacity: 1; transform: translateY(0); }
+    .product-card:hover { box-shadow: 0 20px 60px rgba(13,10,8,0.12); transform: translateY(-6px); }
+    .product-card.visible:hover { transform: translateY(-6px); }
+
+    .badge {
+        position: absolute; top: 16px; left: 16px; background: var(--gold);
+        color: var(--ebony); padding: 5px 14px; font-size: 10px; font-weight: 500;
+        letter-spacing: 2px; text-transform: uppercase; z-index: 2; border-radius: 1px;
+    }
+    .img-container { height: 180px; min-height: 180px; overflow: hidden; position: relative; }
+    .img-container img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center center;
+        transition: transform 0.7s ease;
+    }
+    .product-card:hover .img-container img { transform: scale(1.07); }
+    .img-overlay {
+        position: absolute; inset: 0; background: rgba(13,10,8,0.3);
+        opacity: 0; transition: opacity 0.4s ease;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .product-card:hover .img-overlay { opacity: 1; }
+    .img-overlay-text {
+        color: white; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+        border-bottom: 1px solid rgba(255,255,255,0.5); padding-bottom: 4px;
+    }
+    .product-info { padding: 22px 24px 24px; }
+    .product-info .category {
+        font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+        color: var(--gold); margin-bottom: 8px;
+    }
+    .product-info h3 {
+        font-family: var(--font-display); font-size: 22px;
+        font-weight: 600; margin-bottom: 12px; color: var(--ebony);
+    }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+    .price { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--terracotta); }
+    .whatsapp-btn {
+        display: flex; align-items: center; gap: 8px; padding: 12px 20px;
+        background: #25D366; color: var(--white); border: none; cursor: pointer;
+        border-radius: 2px; font-family: var(--font-body); font-size: 11px;
+        font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: var(--transition);
+    }
+    .whatsapp-btn:hover { background: #128C7E; transform: scale(1.02); }
+
+    /* SIZE GUIDE */
+    .size-guide { padding: 100px 6%; background: var(--ebony); position: relative; overflow: hidden; }
+    .size-guide::before {
+        content: '〇'; position: absolute; font-size: 600px;
+        color: rgba(200,151,58,0.03); top: 50%; left: 50%;
+        transform: translate(-50%, -50%); pointer-events: none; font-family: serif; line-height: 1;
+    }
+    .guide-header { text-align: center; margin-bottom: 70px; }
+    .guide-header .section-label { color: var(--gold); }
+    .guide-header h2 {
+        font-family: var(--font-display); font-size: clamp(34px, 4.5vw, 52px);
+        font-weight: 300; color: var(--white); line-height: 1.15;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .guide-header h2 em { font-style: italic; color: var(--gold-light); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
+    .step {
+        background: rgba(255,255,255,0.03); padding: 48px 36px;
+        border: 1px solid rgba(200,151,58,0.12); position: relative; transition: var(--transition);
+    }
+    .step:hover { background: rgba(200,151,58,0.06); border-color: rgba(200,151,58,0.3); }
+    .step-number {
+        font-family: var(--font-display); font-size: 80px; font-weight: 300;
+        color: rgba(200,151,58,0.15); line-height: 1; margin-bottom: 20px; transition: color 0.4s;
+    }
+    .step:hover .step-number { color: rgba(200,151,58,0.4); }
+    .step h4 { font-family: var(--font-display); font-size: 20px; color: var(--gold); margin-bottom: 12px; font-weight: 400; }
+    .step p { color: rgba(245,237,214,0.55); font-size: 14px; line-height: 1.8; }
+
+    /* FOOTER */
+    footer { background: #080604; color: var(--cream); padding: 80px 6% 40px; position: relative; }
+    footer::before {
+        content: ''; position: absolute; top: 0; left: 6%; right: 6%;
+        height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .footer-brand .logo-footer {
+        font-family: var(--font-display); font-size: 32px; font-weight: 600; margin-bottom: 16px;
+    }
+    .footer-brand .logo-footer span { color: var(--gold); font-style: italic; }
+    .footer-brand p { color: rgba(245,237,214,0.45); font-size: 14px; line-height: 1.8; max-width: 300px; }
+    .footer-section h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-section p, .footer-section a {
+        display: flex; align-items: center; gap: 10px;
+        color: rgba(245,237,214,0.5); font-size: 14px; margin-bottom: 12px; transition: color 0.3s;
+    }
+    .footer-section a:hover { color: var(--cream); }
+    .footer-section i { color: var(--gold); font-size: 14px; width: 16px; }
+    .social-icons { display: flex; gap: 14px; margin-top: 8px; }
+    .social-icons a {
+        width: 40px; height: 40px; border: 1px solid rgba(200,151,58,0.2); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: rgba(245,237,214,0.5); font-size: 15px; transition: var(--transition); margin: 0;
+    }
+    .social-icons a:hover { background: var(--gold); border-color: var(--gold); color: var(--ebony); transform: translateY(-3px); }
+    .footer-bottom {
+        display: flex; justify-content: space-between; align-items: center;
+        padding-top: 30px; border-top: 1px solid rgba(200,151,58,0.08); flex-wrap: wrap; gap: 16px;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(245,237,214,0.25); letter-spacing: 1px; }
+
+    /* REVEAL ANIMATIONS */
+    .reveal, .reveal-left, .reveal-right {
+        opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal         { transform: translateY(40px); }
+    .reveal-left    { transform: translateX(-40px); }
+    .reveal-right   { transform: translateX(40px); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: none; }
+
+    .stagger-children > * { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .stagger-children.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+    .stagger-children.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.15s; }
+    .stagger-children.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.3s; }
+    .stagger-children.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.45s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .about { grid-template-columns: 1fr; gap: 50px; padding: 80px 5%; }
+        .about-text { padding-right: 0; order: -1; }
+        .about-badge { left: 16px; }
+        .footer-top { grid-template-columns: 1fr 1fr; }
+        .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .burger { display: flex; }
+        header { padding: 18px 5%; }
+        header.scrolled { padding: 12px 5%; }
+        .hero h1 { font-size: 38px; }
+        .products, .size-guide { padding: 80px 5%; }
+        .about { padding: 70px 5%; }
+        .about-img-frame img { height: 420px; }
+        .footer-top { grid-template-columns: 1fr; gap: 36px; }
+        .footer-bottom { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 480px) {
+        .hero-btns { flex-direction: column; align-items: center; }
+        .hero-circle { width: 320px; height: 320px; }
+        .product-grid { grid-template-columns: 1fr; }
+        .price-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+        .whatsapp-btn { width: 100%; justify-content: center; }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="logo">Layali <span>Perles</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#produits">Collection</a></li>
+                <li><a href="#guide">Tailles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#accueil" class="mobile-link">Accueil</a>
+        <a href="#histoire" class="mobile-link">Notre Histoire</a>
+        <a href="#produits" class="mobile-link">Collection</a>
+        <a href="#guide" class="mobile-link">Guide des Tailles</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+        <div class="hero-bg">
+            <div class="hero-slide active">
+                <img src="images/image1.png" alt="Perles africaines 2">
+            </div>
+            <div class="hero-slide">
+                <img src="images/image2.png" alt="Perles africaines 2">
+            </div>
+            <div class="hero-slide">
+                <img src="images/image3.png" alt="Perles africaines 3">
+            </div>
+            <div class="hero-slide">
+                <img src="images/image6.webp" alt="Perles africaines 4">
+            </div>
+            </div>
+        </div>
+        <div class="hero-circle"></div>
+        <div class="hero-content">
+            <span class="hero-tag">✦ Artisanat &amp; Tradition d'Afrique ✦</span>
+            <h1>Affirmez votre <em>essence</em><br>à votre taille</h1>
+            <p class="hero-sub">Des bijoux artisanaux qui célèbrent votre essence, quel que soit votre style</p>
+            <div class="hero-btns">
+                <a href="#produits" class="btn-primary">Découvrir la collection</a>
+                <a href="#guide" class="btn-outline">Guide des tailles</a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Défiler</span>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Perles Traditionnelles</span><span class="dot">✦</span>
+            <span>Artisanat Africain</span><span class="dot">✦</span>
+            <span>Fait à la Main</span><span class="dot">✦</span>
+            <span>Livraison Bénin</span><span class="dot">✦</span>
+            <span>Qualité Supérieure</span><span class="dot">✦</span>
+            <span>Perles Traditionnelles</span><span class="dot">✦</span>
+            <span>Artisanat Africain</span><span class="dot">✦</span>
+            <span>Fait à la Main</span><span class="dot">✦</span>
+            <span>Livraison Bénin</span><span class="dot">✦</span>
+            <span>Qualité Supérieure</span><span class="dot">✦</span>
+        </div>
+    </div>
+
+    <!-- HISTOIRE -->
+    <section id="histoire" class="about">
+        <div class="about-visual reveal-left">
+            <div class="about-img-frame">
+                <img src="images/image0.webp" alt="Tradition des perles africaines">
+            </div>
+            <div class="about-badge">
+                <strong>100%</strong>
+                <span>Fait main</span>
+            </div>
+        </div>
+        <div class="about-text reveal-right">
+            <span class="section-label">✦ Notre Histoire</span>
+            <h2>Plus qu'un bijou,<br><em>un héritage</em></h2>
+            <div class="about-divider"></div>
+            <p>Chez <strong>Layali Perles</strong>, nous croyons que chaque perle raconte une histoire. 
+            Bien plus qu’un simple accessoire, nos créations incarnent l’élégance, l’authenticité et l’expression personnelle.
+            Chaque pièce est assemblée à la main avec des matériaux de qualité supérieure afin d’offrir confort, caractère et éclat durable — un savoir-faire inspiré des traditions africaines et pensé pour tous les styles..</p>
+            <a href="#produits" class="btn-primary" style="margin-top:20px; display:inline-block;">Voir la collection</a>
+        </div>
+    </section>
+
+    <!-- PRODUITS -->
+    <section id="produits" class="products">
+        <div class="section-header reveal">
+            <span class="section-label">✦ Nos Créations</span>
+            <h2>La <em>Collection</em></h2>
+            <p>Chaque pièce, une déclaration de féminité</p>
+        </div>
+
+        <div class="filters stagger-children">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="seduction">Séduction</button>
+            <button class="filter-btn" data-filter="cristal">Cristal</button>
+            <button class="filter-btn" data-filter="luxe">Luxe</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <div class="product-card" data-category="seduction">
+                <div class="badge">Top Vente</div>
+                <div class="img-container">
+                    <img src="images/baya1.JPG" alt="Baya Rouge Rubis">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Séduction</p>
+                    <h3>Baya Rouge Rubis</h3>
+                    <div class="price-row">
+                        <span class="price">2 500 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Rouge Rubis')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cristal">
+                <div class="img-container">
+                    <img src="images/baya2.JPG" alt="Baya Cristal Pur">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Cristal</p>
+                    <h3>Baya Cristal Pur</h3>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Cristal Pur')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="luxe">
+                <div class="img-container">
+                    <img src="images/baya3.JPG" alt="Baya Royal Gold">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Luxe</p>
+                    <h3>Baya Royal Gold</h3>
+                    <div class="price-row">
+                        <span class="price">5 000 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Royal Gold')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nouveaux Produits -->
+            <div class="product-card" data-category="seduction">
+                <div class="img-container">
+                    <img src="images/baya1.jpg" alt="Baya Élégance">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Séduction</p>
+                    <h3>Baya Élégance</h3>
+                    <div class="price-row">
+                        <span class="price">2 800 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Élégance')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="cristal">
+                <div class="img-container">
+                    <img src="images/perles-homme1.jpg" alt="Perles Homme">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Cristal</p>
+                    <h3>Perles Homme</h3>
+                    <div class="price-row">
+                        <span class="price">4 200 FCFA</span>
+                        <button class="whatsapp-btn" onclick="orderWhatsApp('Perles Homme')">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDE DES TAILLES -->
+    <section id="guide" class="size-guide">
+        <div class="guide-header reveal">
+            <span class="section-label">✦ Guide des Tailles</span>
+            <h2>Comment choisir<br><em>sa taille ?</em></h2>
+        </div>
+        <div class="steps stagger-children">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h4>Prenez vos mesures</h4>
+                <p>Munissez-vous d'un ruban à mesurer ou d'une simple ficelle pour une mesure précise.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h4>Mesurez votre tour</h4>
+                <p>Enroulez-le à l'endroit où vous souhaitez porter votre Baya — taille haute ou hanches.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h4>Commandez sur-mesure</h4>
+                <p>Notez la mesure en centimètres et précisez-la lors de votre commande WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo-footer">Layali <span>Perles</span></div>
+                <p>Sublimer la femme, perle après perle. Un art ancestral réinterprété avec élégance pour la femme africaine d'aujourd'hui.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +229 01 58 41 32 77</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp disponible</p>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/sylas_creators" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://facebook.com/sylas EHOUAN" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Layali Perles — Réalisé avec élégance</p>
+            <p>Cotonou, Bénin 🇧🇯</p>
+        </div>
+    </footer>
+
+    <script>
+    /* CAROUSEL HERO */
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remov('active'));
+        slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Lancer le carrousel automatique toutes les 4 secondes
+    setInterval(nextSlide, 4000);
+
+    /* HEADER SCROLL */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* BURGER MENU */
+    const burger    = document.getElementById('burger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    function toggleMenu(open) {
+        burger.classList.toggle('open', open);
+        mobileNav.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    burger.addEventListener('click', () => {
+        toggleMenu(!mobileNav.classList.contains('open'));
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    /* SCROLL REVEAL */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-children').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    /* PRODUCT CARD REVEAL */
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 130);
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.product-card').forEach(card => cardObserver.observe(card));
+
+    /* FILTER BUTTONS */
+    const filterBtns   = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+
+            productCards.forEach(card => {
+                const match = filter === 'all' || card.getAttribute('data-category') === filter;
+                if (match) {
+                    card.style.display = '';
+                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(12px)';
+                    setTimeout(() => { card.style.display = 'none'; }, 350);
+                }
+            });
+        });
+    });
+
+    /* WHATSAPP ORDER */
+    function orderWhatsApp(productName) {
+        const message = `Bonjour Layali Perles 👋\n\nJe souhaite commander : *${productName}*\n\nMerci de me confirmer la disponibilité et les modalités de commande. 🙏`;
+        window.open(`https://wa.me/2290158413277?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    /* SMOOTH SCROLL */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+    </script>
+</body>
+</html>
