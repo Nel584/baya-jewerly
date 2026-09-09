@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layali Perles | Collection</title>
+    <meta name="description" content="Découvrez toute la collection Layali Perles : bayas, bracelets et créations couple faites main à Cotonou.">
+    <title>Layali Perles | La Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-inner">
 
-    <!-- HEADER -->
-    <header id="header">
-        <div class="logo">Layali <span>Perles</span></div>
+    <header id="header" class="header-solid">
+        <a href="index.html" class="logo">Layali <span>Perles</span></a>
         <nav>
             <ul class="nav-links">
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="histoire.html">Histoire</a></li>
-                <li><a href="collection.html">Collection</a></li>
-                <li><a href="taille.html">Tailles</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#histoire">Histoire</a></li>
+                <li><a href="collection.html" class="active" aria-current="page">Collection</a></li>
+                <li><a href="index.html#guide">Tailles</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="burger" id="burger">
@@ -27,91 +27,965 @@
         </nav>
     </header>
 
-    <!-- MOBILE NAV -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="accueil.html" class="mobile-link">Accueil</a>
-        <a href="histoire.html" class="mobile-link">Notre Histoire</a>
+        <a href="index.html" class="mobile-link">Accueil</a>
+        <a href="index.html#histoire" class="mobile-link">Notre Histoire</a>
         <a href="collection.html" class="mobile-link">Collection</a>
-        <a href="taille.html" class="mobile-link">Guide des Tailles</a>
+        <a href="index.html#guide" class="mobile-link">Guide des Tailles</a>
         <a href="contact.html" class="mobile-link">Contact</a>
     </div>
 
-    <!-- PRODUITS -->
-    <section class="products">
-        <div class="section-header reveal">
+    <section class="page-banner">
+        <div class="page-banner-bg">
+            <img src="image scrolle/image6.webp" alt="Collection de bayas Layali Perles">
+        </div>
+        <div class="page-banner-content">
+            <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                <a href="index.html">Accueil</a>
+                <span aria-hidden="true">/</span>
+                <span>Collection</span>
+            </nav>
             <span class="section-label">✦ Nos Créations</span>
-            <h2>La <em>Collection</em></h2>
-            <p>Chaque pièce, une déclaration de féminité</p>
-        </div>
-
-        <div class="filters stagger-children">
-            <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="seduction">Séduction</button>
-            <button class="filter-btn" data-filter="cristal">Cristal</button>
-            <button class="filter-btn" data-filter="luxe">Luxe</button>
-        </div>
-
-        <div class="product-grid" id="productGrid">
-            <div class="product-grid" id="productGrid"
-            <div class="product-card" data-category="seduction">
-                <div class="badge">Top Vente</div>
-                <div class="img-container">
-                    <img src="images/baya1.JPG" alt="Baya Rouge Rubis">
-                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
-                </div>
-                <div class="product-info">
-                    <p class="category">Collection Séduction</p>
-                    <h3>Baya Rouge Rubis</h3>
-                    <div class="price-row">
-                        <span class="price">2 500 FCFA</span>
-                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Rouge Rubis')">
-                            <i class="fab fa-whatsapp"></i> Commander
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="cristal">
-                <div class="img-container">
-                    <img src="images/baya2.JPG" alt="Baya Cristal Pur">
-                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
-                </div>
-                <div class="product-info">
-                    <p class="category">Collection Cristal</p>
-                    <h3>Baya Cristal Pur</h3>
-                    <div class="price-row">
-                        <span class="price">3 500 FCFA</span>
-                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Cristal Pur')">
-                            <i class="fab fa-whatsapp"></i> Commander
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="luxe">
-                <div class="img-container">
-                    <img src="images/baya3.JPG" alt="Baya Royal Gold">
-                    <div class="img-overlay"><span class="img-overlay-text">Voir le produit</span></div>
-                </div>
-                <div class="product-info">
-                    <p class="category">Collection Luxe</p>
-                    <h3>Baya Royal Gold</h3>
-                    <div class="price-row">
-                        <span class="price">5 000 FCFA</span>
-                        <button class="whatsapp-btn" onclick="orderWhatsApp('Baya Royal Gold')">
-                            <i class="fab fa-whatsapp"></i> Commander
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <h1>La <em>Collection</em></h1>
+            <p>Parcourez nos bayas, bracelets et pièces couple — choisissez, ajoutez au panier et commandez sur WhatsApp.</p>
         </div>
     </section>
 
-    <!-- MODAL -->
+    <section id="produits" class="products products-page">
+        <div class="filters stagger-children">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="femme">Parures Féminines</button>
+            <button class="filter-btn" data-filter="homme">Prestige Masculin</button>
+            <button class="filter-btn" data-filter="harmonie">Alliances et Harmonie</button>
+            <button class="filter-btn" data-filter="models">Modèles (Perles seules)</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- Parures Féminines — dossier femmes -->
+            <div class="product-card" data-category="femme">
+                <div class="badge">Top Vente</div>
+                <div class="img-container">
+                    <img src="femmes/1.jpg" alt="Baya Élégance">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #1', 8000, 'femmes/1.jpg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/2bf0af74-4e46-4257-b58a-2646c016fd05.jpg" alt="Baya Rose Cristal">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #2', 8000, 'femmes/2bf0af74-4e46-4257-b58a-2646c016fd05.jpg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/A set for the girls that like it small🤭 Shop Floral Set of 3 now on waistbeadabynora_com This set has 3 lovely waist beads in 3 different colours 📿.jpeg" alt="Baya Floral Trio">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #3', 8000, 'femmes/A set for the girls that like it small🤭 Shop Floral Set of 3 now on waistbeadabynora_com This set has 3 lovely waist beads in 3 different colours 📿.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Aesthetic picture_.jpeg" alt="Baya Aesthetic">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #4', 8000, 'femmes/Aesthetic picture_.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/BEADS-2029_1024x1024.webp" alt="Baya Perles 2029">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #5', 8000, 'femmes/BEADS-2029_1024x1024.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Black girl magic🤎.jpeg" alt="Baya Black Magic">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #6', 8000, 'femmes/Black girl magic🤎.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Gemini_Generated_Image_2ryu202ryu202ryu.png" alt="Baya Gemini">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #7', 8000, 'femmes/Gemini_Generated_Image_2ryu202ryu202ryu.png')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/GJgw3LdWEAAyr-X.jpg" alt="Baya Sunset">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #8', 8000, 'femmes/GJgw3LdWEAAyr-X.jpg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/IMG_0739.webp" alt="Baya Pearl Glow">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #9', 8000, 'femmes/IMG_0739.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Ocean Soul Waistbeads 🐚✨.jpeg" alt="Baya Ocean Soul">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #10', 8000, 'femmes/Ocean Soul Waistbeads 🐚✨.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/S8591a206e64f44488e4dbc0acb869f8bp.avif" alt="Baya Or Prestige">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #11', 8000, 'femmes/S8591a206e64f44488e4dbc0acb869f8bp.avif')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger (1).jpeg" alt="Baya Rubis">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #12', 8000, 'femmes/télécharger (1).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger (11).jpeg" alt="Baya Améthyste">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #13', 8000, 'femmes/télécharger (11).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger (8).jpeg" alt="Baya Jade">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #14', 8000, 'femmes/télécharger (8).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Waist bead.jpeg" alt="Baya Classic">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #15', 8000, 'femmes/Waist bead.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Waist_Beads_Sensual.webp" alt="Baya Sensual">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #16', 8000, 'femmes/Waist_Beads_Sensual.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/z-overzicht3_32ccb666-9d12-49e8-9a37-1e4ae010c4ae_1024x1024.webp" alt="Baya Royal Z">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">8 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #17', 8000, 'femmes/z-overzicht3_32ccb666-9d12-49e8-9a37-1e4ae010c4ae_1024x1024.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bracelets de bras — dossier femmes -->
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Custom bracelet set.jpeg" alt="Bracelet bras — set personnalisé prénom">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #18', 3000, 'femmes/Custom bracelet set.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/Flower Bracelet.jpeg" alt="Bracelet bras — perles noires breloque fleur">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #19', 3000, 'femmes/Flower Bracelet.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger (2).jpeg" alt="Bracelet bras — perles roses breloque fleur mauve">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #20', 3000, 'femmes/télécharger (2).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger (3).jpeg" alt="Bracelet bras — perles noires breloque cœur">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #21', 3000, 'femmes/télécharger (3).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/télécharger.jpeg" alt="Bracelet bras — stack perles roses breloques">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #22', 3000, 'femmes/télécharger.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="femme">
+                <div class="img-container">
+                    <img src="femmes/😍🩵🩷🤍.jpeg" alt="Bracelet bras — stack perles blanc rose bleu">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Parures Féminines</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Parures Féminines #23', 3000, 'femmes/😍🩵🩷🤍.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prestige Masculin — dossier hommes -->
+            <div class="product-card" data-category="homme">
+                <div class="badge">Nouveauté</div>
+                <div class="img-container">
+                    <img src="hommes/2026_05_03_19_31_26_IMG_0568.JPG" alt="Bracelet Alex Couronne">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #1', 4000, 'hommes/2026_05_03_19_31_26_IMG_0568.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/2026_05_03_19_33_35_IMG_0571.JPG" alt="Bracelet Couronne Or">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #2', 4000, 'hommes/2026_05_03_19_33_35_IMG_0571.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/2026_05_03_19_35_28_IMG_0572.JPG" alt="Bracelet Élégance">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #3', 4000, 'hommes/2026_05_03_19_35_28_IMG_0572.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/5 Reasons Why Men Need to Own a Bracelet.jpeg" alt="Bracelet Essentiel">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #4', 4000, 'hommes/5 Reasons Why Men Need to Own a Bracelet.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/ima2.jpeg" alt="Bracelet Classic">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #5', 4000, 'hommes/ima2.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/image8.jpeg" alt="Bracelet Cristal Noir">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #6', 4000, 'hommes/image8.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/instagram _ tafassill.jpeg" alt="Bracelet Tafassil">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #7', 4000, 'hommes/instagram _ tafassill.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/télécharger (3).jpeg" alt="Bracelet Onyx">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #8', 4000, 'hommes/télécharger (3).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/télécharger (4).jpeg" alt="Bracelet Royal">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #9', 4000, 'hommes/télécharger (4).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/télécharger (5).jpeg" alt="Bracelet Prestige">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #10', 4000, 'hommes/télécharger (5).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/télécharger (9).jpeg" alt="Bracelet Signature">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #11', 4000, 'hommes/télécharger (9).jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="homme">
+                <div class="img-container">
+                    <img src="hommes/Мужской браслет с хрусталем.jpeg" alt="Bracelet Cristal Homme">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Prestige Masculin</p>
+                    <div class="price-row">
+                        <span class="price">4 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Prestige Masculin #12', 4000, 'hommes/Мужской браслет с хрусталем.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alliances et Harmonie — dossier bracelet couple -->
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/1.jpeg" alt="Alliance Harmonie I">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #1', 3500, 'bracelet couple/1.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/2.webp" alt="Alliance Harmonie II">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #2', 3500, 'bracelet couple/2.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/3.jpeg" alt="Alliance Harmonie III">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #3', 3500, 'bracelet couple/3.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/4.webp" alt="Alliance Harmonie IV">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #4', 3500, 'bracelet couple/4.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/5.webp" alt="Alliance Harmonie V">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #5', 3500, 'bracelet couple/5.webp')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/6.jpeg" alt="Alliance Harmonie VI">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #6', 3500, 'bracelet couple/6.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/7.jpeg" alt="Alliance Harmonie VII">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #7', 3500, 'bracelet couple/7.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/8.jpeg" alt="Alliance Harmonie VIII">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #8', 3500, 'bracelet couple/8.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/9.JPG" alt="Alliance Harmonie IX">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #9', 3500, 'bracelet couple/9.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="badge">Couple</div>
+                <div class="img-container">
+                    <img src="bracelet couple/Brasli couple.jpeg" alt="Bracelet Brasli Couple">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #10', 3500, 'bracelet couple/Brasli couple.jpeg')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="bracelet couple/image1.png" alt="Alliance Duo Azure">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #11', 3500, 'bracelet couple/image1.png')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="image scrolle/image2.png" alt="Baya Duo Complice">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #12', 3500, 'image scrolle/image2.png')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="harmonie">
+                <div class="img-container">
+                    <img src="image scrolle/image3.png" alt="Bracelet Duo Yin Yang">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Alliances et Harmonie</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Alliances et Harmonie #13', 3500, 'image scrolle/image3.png')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modèles (perles seules) -->
+            <div class="product-card" data-category="models">
+                <div class="img-container">
+                    <img src="perles avec motifs/2026_04_24_07_52_07_IMG_0526.JPG" alt="Perles seules — Modèle 1">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Cristal</p>
+                    <div class="price-row">
+                        <span class="price">2 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Modèles #1', 2500, 'perles avec motifs/2026_04_24_07_52_07_IMG_0526.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="models">
+                <div class="img-container">
+                    <img src="perles avec motifs/2026_05_03_19_27_39_IMG_0561.JPG" alt="Perles seules — Modèle 2">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Cristal</p>
+                    <div class="price-row">
+                        <span class="price">3 500 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Modèles #2', 3500, 'perles avec motifs/2026_05_03_19_27_39_IMG_0561.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="models">
+                <div class="img-container">
+                    <img src="perles avec motifs/2026_05_03_19_27_59_IMG_0562.JPG" alt="Perles seules — Modèle 3">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Séduction</p>
+                    <div class="price-row">
+                        <span class="price">2 800 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Modèles #3', 2800, 'perles avec motifs/2026_05_03_19_27_59_IMG_0562.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="models">
+                <div class="img-container">
+                    <img src="perles avec motifs/2026_05_03_19_28_52_IMG_0563.JPG" alt="Perles seules — Modèle 4">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Luxe</p>
+                    <div class="price-row">
+                        <span class="price">3 000 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Modèles #4', 3000, 'perles avec motifs/2026_05_03_19_28_52_IMG_0563.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="models">
+                <div class="img-container">
+                    <img src="perles avec motifs/2026_05_03_19_29_07_IMG_0564.JPG" alt="Perles seules — Modèle 5">
+                    <div class="img-overlay"><span class="img-overlay-text">Voir les détails</span></div>
+                </div>
+                <div class="product-info">
+                    <p class="category">Collection Luxe</p>
+                    <div class="price-row">
+                        <span class="price">3 200 FCFA</span>
+                        <button class="add-to-cart-btn" onclick="addToCart('Modèles #5', 3200, 'perles avec motifs/2026_05_03_19_29_07_IMG_0564.JPG')">
+                            <i class="fas fa-plus"></i> Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="collection-page-note">
+            <i class="fas fa-ruler-combined"></i>
+            Besoin d'aide pour la taille ?
+            <a href="index.html#guide">Consultez le guide des tailles</a>
+        </p>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo-footer">Layali <span>Perles</span></div>
+                <p>Sublimer le corps, perle après perle. Un art ancestral réinterprété avec élégance pour l'expression de votre féminité et de votre style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +229 01 92 21 18 95</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ehouans@gmail.com">ehouans@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Cotonou, Bénin</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp disponible</p>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/sylas_dev" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/sylas.ehn" target="_blank" rel="noopener" aria-label="Facebook Sylas Ehn"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Layali Perles — Réalisé avec élégance</p>
+            <p>Cotonou, Bénin 🇧🇯</p>
+        </div>
+    </footer>
+
+    <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Ouvrir le panier">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+        <div class="cart-drawer-content">
+            <div class="cart-drawer-header">
+                <h3>Votre Panier</h3>
+                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty-message">Votre panier est vide.</div>
+            </div>
+            <div class="cart-drawer-footer">
+                <div class="cart-subtotal">
+                    <span>Sous-total</span>
+                    <span class="cart-total-price" id="cartTotal">0 FCFA</span>
+                </div>
+                <button class="cart-checkout-btn" id="cartCheckoutBtn">
+                    <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="modal" id="productModal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img id="modalImg" src="" alt="">
+            <img id="modalImg" src="" alt="Aperçu du produit">
         </div>
     </div>
 
