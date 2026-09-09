@@ -86,6 +86,11 @@ body.page-inner header:not(.header-light) {
 }
 .mobile-nav a:hover { color: var(--gold); }
 
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: flex; }
+}
+
 /* HERO */
 .hero {
     height: 100vh; position: relative;
@@ -253,6 +258,12 @@ body.page-inner header:not(.header-light) {
 .about-text h2 em { font-style: italic; color: var(--terracotta); }
 .about-text p { color: var(--gray); line-height: 1.9; font-size: 15px; margin-bottom: 18px; }
 .about-divider { width: 48px; height: 1px; background: var(--gold); margin: 30px 0; }
+
+@media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; gap: 40px; padding: 80px 6%; }
+    .about-img-frame img { height: 320px; }
+    .about-text { padding-right: 0; }
+}
 
 /* PAGE BANNER (collection, etc.) */
 .page-banner {
@@ -710,6 +721,11 @@ footer::before {
     padding-top: 30px; border-top: 1px solid rgba(200,151,58,0.08); flex-wrap: wrap; gap: 16px;
 }
 .footer-bottom p { font-size: 12px; color: rgba(245,237,214,0.25); letter-spacing: 1px; }
+
+@media (max-width: 900px) {
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    .footer-brand p { max-width: 100%; }
+}
 
 /* REVEAL ANIMATIONS */
 .reveal, .reveal-left, .reveal-right {
